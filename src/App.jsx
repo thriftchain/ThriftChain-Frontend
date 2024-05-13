@@ -11,7 +11,7 @@ import { configWeb3Modal } from "./connection";
 import User from "./pages/Dashboard/User";
 import OnboardingData from "./pages/OnboardingData";
 import UserDetails from "./pages/UserDetails";
-import DashboardDetails from "./pages/Dashboard/DashboardDetails";
+import About from "./pages/About";
 
 configWeb3Modal();
 
@@ -19,6 +19,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path="/" element={<MainLayout />} >
       <Route index element={<Home />} />  
+      <Route path="/about" element={<About />} />  
       <Route path="/signup" element={<OnboardingData />} />  
     </Route>
     <Route path="/dashboard" element={<DashboardLayout />}>
