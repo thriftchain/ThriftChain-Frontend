@@ -134,7 +134,7 @@ const Key = () => {
                             <img
                                 src={reduced}
                                 alt="reduced"
-                                className="object-fit-object w-full object-center rounded mt-7"
+                                className="object-fit-object w-full object-center rounded mt-12"
                             />
                         </div>
 
@@ -186,7 +186,7 @@ const Key = () => {
                             <img
                                 src={crypto}
                                 alt="crypto"
-                                className="object-fit-object w-full object-center rounded mt-7"
+                                className="object-fit-object w-full object-center rounded mt-12"
                             />
                         </div>
 
