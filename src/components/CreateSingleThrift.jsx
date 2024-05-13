@@ -100,7 +100,7 @@ const CreateSingleThrift = () => {
     <div>
       <button
         onClick={handleOpen}
-        className="bg-[#2C2C2C] hover:bg-blue-700 text-white font-normal py-2 rounded-full border-white border-spacing-1 mx-4 px-4"
+        className="style border py-2 px-8 my-4  hover:bg-[#9C0F94]"
       >
         Create Single Thrift
       </button>

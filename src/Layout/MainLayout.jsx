@@ -1,9 +1,12 @@
 import Header from "../components/Header"
-import { Outlet } from "react-router-dom"
 import Footer from "../components/Footer"
+import { Navigate, Outlet } from "react-router-dom"
+import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 
 const MainLayout = () => {
-  return (
+  const { isConnected } = useWeb3ModalAccount();
+
+  return isConnected ? <Navigate to={'/dashboard'} /> : (
     <div>
         <Header />
         <Outlet />

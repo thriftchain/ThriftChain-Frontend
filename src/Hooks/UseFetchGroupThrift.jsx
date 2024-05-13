@@ -4,19 +4,19 @@ import { getThriftContract } from "../constants/contract";
 import { wssProvider } from "../constants/providers";
 import { ethers } from "ethers";
 
-const UseFetchRequests = () => {
-    const [allRequests, setAllRequests] = useState([]);
+const UseFetchGroupThrift = () => {
+    const [allGroupRequests, setAllGroupRequests] = useState([]);
     const [count, setCount] = useState(0);
 
-    const fetchAllSingleThrift = useCallback(async () => {
+    const fetchAllGroupThrift = useCallback(async () => {
         try {
             const contract = getThriftContract(readOnlyProvider);
-            const res = await contract.allSingle();
-            const converted = res?.map((addInfo)=>{
-                return{addInfo,
+            const res = await contract.allGroup();
+            const converted = res?.map((groupAdd)=>{
+                return{groupAdd,
             }
             }) 
-            setAllRequests(converted)
+            setAllGroupRequests(converted)
         } catch (error) {
             console.error(error);
         }
@@ -24,16 +24,16 @@ const UseFetchRequests = () => {
 
     const trackingRequests = useCallback(() => {
         setCount((prevValue) => prevValue + 1);
-        fetchAllSingleThrift();
-    }, [fetchAllSingleThrift]);
+        fetchAllGroupThrift();
+    }, [fetchAllGroupThrift]);
 
 
     useEffect(() => {
-        fetchAllSingleThrift();
+        fetchAllGroupThrift();
 
         const filter = {
             address: import.meta.env.VITE_CONTRACT_ADDRESS,
-            topics: [ethers.id("NewSingleCreated(address,string,SingleThrift)")],
+            topics: [ethers.id("NewGroupCreated(address,string,GroupThrift)")],
         };
 
         wssProvider.getLogs({ ...filter, fromBlock: 4702687 }).then((events) => {
@@ -50,9 +50,9 @@ const UseFetchRequests = () => {
             provider.off(filter, trackingRequests);
         };
 
-    }, [fetchAllSingleThrift, trackingRequests, count]);
+    }, [fetchAllGroupThrift, trackingRequests, count]);
 
-    return allRequests;
+    return allGroupRequests;
 }
 
-export default UseFetchRequests
+export default UseFetchGroupThrift 

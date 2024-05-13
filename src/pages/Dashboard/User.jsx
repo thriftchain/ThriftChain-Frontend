@@ -1,182 +1,101 @@
-import { Link } from "react-router-dom";
-import dream from "../../assets/dream.svg";
-import edu from "../../assets/edu.svg";
-import occasion from "../../assets/occasion.svg";
-import goal from "../../assets/goal.svg";
-import milestone from "../../assets/milestone.svg";
-import vacation from "../../assets/vacation.svg";
-import school from "../../assets/school.svg";
-import purchase from "../../assets/purchase.svg";
-import { AiOutlineTeam } from "react-icons/ai";
+import React, { useState } from 'react'
 import CreateSingleThrift from "../../components/CreateSingleThrift";
 import CreateGroupThrift from "../../components/CreateGroupThrift";
 import UseFetchRequests from "../../Hooks/UseFetchRequests";
-// import RenderRequests from "../../components/RenderRequests";
+import { Link } from "react-router-dom";
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+import UseFetchGroupThrift from '../../Hooks/UseFetchGroupThrift';
 
 const UserHome = () => {
-    // const allRequests = UseFetchRequests()
-    // console.log(allRequests)
+  const allRequests = UseFetchRequests();
+  const allGroupRequests = UseFetchGroupThrift()
+ 
+  const [value, setValue] = useState('singleThrift');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    return value;
+  };
+
+  const handleClick = (value) => {
+    return value
+  }
+
   return (
-    <div className="bg-[#070624] ">
-      <div className="container mx-auto px-4 sm:px-[80px] py-[100px]">
-        <h1 className="text-[30px] md:text-[34px] font-bold capitalize  text-white mx-44 mt-4 ">
-          Find a contribution module{" "}
-        </h1>
-        <h2 className="text-[20px] md:text-[20px] font-bold capitalize text-white  mx-44">
-          Browse and find contribution modules to join
-        </h2>
-
-        <div className="mx-48 mt-4 mb-3 flex items-center">
+    <div className="text-white">
+      <h1 className="mb-4 lg:text-[38px] md:text-[38px] text-[24px]">
+        Find a contribution module
+      </h1>
+      <div className="px-8 py-10 bg-[#060E37] rounded-lg">
+        <div className="flex justify-between items-center">
+          <h2 className="text-[18px] lg:text-[22px] md:text-[22px] font-bold">
+            Browse and find contribution modules to join
+          </h2>
+          <div className="mt-4 mb-3 flex items-center">
             <CreateGroupThrift />
-          <CreateSingleThrift />
-        </div>
-
-        <div className="bg-[#070624] grid-cols-4 gap-4 md:flex md:flex-row">
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
-            <img
-              src={dream}
-              alt="dream"
-              className="object-fit-object w-full rounded"
-            />
-            <div className="w-full h-1/2 shadow-md mx-2">
-              <h3 className="font-bold text-white text-base">DreamSavers</h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Save Together for Your Dream
-                <br></br>Event
-                <br></br> <AiOutlineTeam />
-                500k
-              </p>
-            </div>
-          </div>
-
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
-            <img
-              src={edu}
-              alt="edu"
-              className="object-fit-object w-full object-center rounded"
-            />
-            <div className="w-full h-1/2  shadow-md mx-2">
-              <h3 className="font-bold text-white text-base">EduFunders</h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Group Savings for Education
-                <br></br> related purposes
-                <br></br>
-                <AiOutlineTeam />
-                1.2m
-              </p>
-            </div>
-          </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
-            <img
-              src={occasion}
-              alt="occasion"
-              className="object-fit-object h-2/3 w-full object-center rounded"
-            />
-            <div className="w-full h-1/2 shadow-md mx-2 object-contain">
-              <h3 className="font-bold text-white text-base">OccasionSquad</h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Group saving for Funding Your
-                <br></br>Special Occasion
-                <br></br>
-                <AiOutlineTeam />
-                201k
-              </p>
-            </div>
-          </div>
-<UseFetchRequests />
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
-            <img
-              src={goal}
-              alt="goal"
-              className="object-fit-object h-2/3 w-full object-center rounded"
-            />
-            <div className="w-full h-1/2 shadow-md mx-2">
-              <h3 className="font-bold text-white text-base">GoalAchievers</h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Let’s Achieve Financial Goals as
-                <br></br>a Team
-                <br></br>
-                <AiOutlineTeam />
-                500k
-              </p>
-            </div>
+            <CreateSingleThrift />
           </div>
         </div>
-        <div className="bg-[#070624] grid-cols-4 gap-4 md:flex md:flex-row">
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
+        <section>
+        <Box sx={{ width: '100%', typography: 'body1', color: 'white'}}>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example" TabIndicatorProps={{
+                        style: {
+                        backgroundColor: "#9C0F94",
+                        color: 'white'
+                        }
+                    }}>
+      <Tab label="Single Thrift" value="singleThrift" style={{ color: 'white' }} />
+            <Tab label="Group Thrift" value="groupThrift" style={{ color: 'white' }} />
+          </TabList>
+        </Box>
+        <TabPanel value="singleThrift">
+        <section className="flex justify-between flex-wrap mt-8">
+        {allRequests.map((info, index) => (
+        <div className="lg:w-[30%] md:w-[30%] w-[100%] p-6 rounded-lg shadow-md shadow-[#3b3b3b]" key={index} onClick={handleClick}>
+            <Link to={`${info.addInfo}`}>
             <img
-              src={milestone}
-              alt="milestone"
-              className="object-fit-object h-2/3 w-full object-center rounded"
+                src="https://img.freepik.com/free-photo/3d-cartoon-character-fun-teenager_183364-80805.jpg?t=st=1715518957~exp=1715522557~hmac=d5a2038f20c2276af324113fc4a15bca2d989b6953b052cdccda61b165e4834e&w=1380"
+                alt=""
+                className="w-[100%] rounded-lg"
             />
-            <div className="w-full h-1/2 shadow-md mx-2">
-              <h3 className="font-bold text-white text-base">
-                MilestoneCollectors
-              </h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Collective Savings for Your
-                <br></br>Milestone
-                <br></br>
-                <AiOutlineTeam />
-                120k
-              </p>
-            </div>
-          </div>
-
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
-            <img
-              src={vacation}
-              alt="vacation"
-              className="object-fit-object h-2/3 w-full object-center rounded"
-            />
-            <div className="w-full h-1/2 shadow-md mx-2">
-              <h3 className="font-bold text-white text-base">VacationSavers</h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Collective Savings for Memorable
-                <br></br> Vacations
-                <br></br>
-                <AiOutlineTeam />
-                31m
-              </p>
-            </div>
-          </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
-            <img
-              src={school}
-              alt="school"
-              className="object-fit-object h-2/3 w-full object-center rounded"
-            />
-            <div className="w-full h-1/2 shadow-md mx-2">
-              <h3 className="font-bold text-white text-base">SchoolSponsors</h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Group Contributions for School
-                <br></br>Funds
-                <br></br>
-                <AiOutlineTeam />
-                921k
-              </p>
-            </div>
-          </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-[#070624] sm:shrink-0 sm:grow sm:basis-0 border-white border-2">
-            <img
-              src={purchase}
-              alt="purchase"
-              className="object-fit-object h-2/3 w-full object-center rounded"
-            />
-            <div className="w-full h-1/2 shadow-md mx-2">
-              <h3 className="font-bold text-white text-base">
-                PurchasePartners
-              </h3>
-              <p className="font-normal text-justify text-white text-xs">
-                Save Together for that Special
-                <br></br>Purchase
-                <br></br>
-                <AiOutlineTeam />
-                30k
-              </p>
-            </div>
-          </div>
+            <p className='truncate mt-4'>{info.addInfo}</p>
+            <p className="font-normal text-justify text-white text-xs">
+                Save towards a goal.
+            </p>
+            </Link>
         </div>
+        ))}
+        </section>
+        </TabPanel>
+        <TabPanel value="groupThrift">
+        <section className="flex justify-between flex-wrap mt-8">
+        {allGroupRequests.map((info, index) => (
+            <div className="lg:w-[30%] md:w-[30%] w-[100%] p-6 rounded-lg shadow-md shadow-[#3b3b3b]" key={index}>
+              <Link to={`${info.groupAdd}`}>
+                <img
+                  src="https://img.freepik.com/free-vector/diverse-group-people-savings-concept-illustration_53876-32631.jpg?t=st=1715550013~exp=1715553613~hmac=4c9520da4dad94ce1c877974fa7dc68a9d7c5dd653c9d0ae22ad14388ae26e63&w=1800"
+                  alt=""
+                  className="w-[100%] rounded-lg"
+                />
+                <p className='truncate mt-4'>{info.groupAdd}</p>
+                <p className="font-normal text-justify text-white text-xs">
+                  Save towards a goal.
+                </p>
+              </Link>
+            </div>
+          ))}
+          </section>
+        </TabPanel>
+      </TabContext>
+         </Box>
+        </section>
+       
       </div>
     </div>
   );
