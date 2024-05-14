@@ -1,14 +1,14 @@
-### Theme: Blockchain Thrift and Contribution Application
+## Theme: Blockchain Thrift and Contribution Application
 Product Name: Thriftchain
 
-### Overview
+## Overview
 ThriftChain is a groundbreaking financial management platform that leverages blockchain technology to redefine personal and collective savings. In response to the challenges faced by individuals and groups in effective financial planning and asset/goods acquisition, It provides a secure, transparent, and user-friendly solution.
 
-### Problem Statement
+## Problem Statement
 
 Many individuals and groups struggle to effectively save money or contribute towards shared financial goals due to economic, financial, and trust-related issues. The absence of a transparent, secure, and inclusive platform impedes the seamless combination of individual and group savings, resulting in inefficient achievement of financial goals, and acquisition of assets/goods. Moreover, the lack of diverse asset options and inflexible ownership models limits participation and engagement.
 
-### Solution Offered:
+## Solution Offered:
 ThriftChain introduces a user-friendly interface and incorporates blockchain technology to establish a secure and transparent financial ecosystem. Individuals and groups can set personalized financial goals, contribute in stable coins of users' choice, and track their progress in real-time. The product allows users to participate in the financial inclusion selecting their saving frequency (daily, weekly, bi-weekly, or monthly) while defining their financial goals, be it for personal objectives or communal assets. 
 ThriftChain facilitates diverse asset management and goods acquisition, including home appliances, properties, gadgets, vehicles, and educational resources. 
 ThriftChain provides a secure, transparent, and efficient way for users to save, contribute, and work towards achieving financial and lifestyle goals thus fostering a culture of disciplined and goal-oriented financial planning.
@@ -17,7 +17,7 @@ Smart contracts govern contributions, ensuring equitable distribution and fracti
 
 
 
-### Features and Functionality
+## Features and Functionality
 
 User Account Management: 
 
@@ -62,7 +62,7 @@ Visibility settings for group goals - public, private, or invite-only.
 Option to set target amounts, maturity dates, and contribution frequency.
 
 
-Individual Savings Module:
+### Individual Savings Module:
 
 Users can save individually towards their goals after connecting wallet
 
@@ -81,7 +81,7 @@ Users can adjust maturity date some weeks further or before.
 Upon maturity, the system releases the saved amount plus any accrued interest in the selected currency to the user's wallet.
 
 
-Group Contribution Module:
+### Group Contribution Module:
 
 Group creation and management: 
 
@@ -102,7 +102,7 @@ Visibility of each member's contribution towards group goals (i.e it allows the 
 Distribution option: Upon goal achievement, the platform facilitates the equitable distribution of assets based on the predefined sharing model.
 
 
-### Contract deployment on lisk
+## Contract deployment on lisk
 https://sepolia-blockscout.lisk.com/tx/0x88ec298a3ed6c7145a5a2635967624e6e3f2125692f83ace299e83ff0c7d9838
 
 ## Demo
