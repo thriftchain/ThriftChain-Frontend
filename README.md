@@ -100,3 +100,13 @@ Group members can contribute funds using either cryptocurrency.
 Visibility of each member's contribution towards group goals (i.e it allows the display of each member's contributions and share percentage in the group's assets.)
 
 Distribution option: Upon goal achievement, the platform facilitates the equitable distribution of assets based on the predefined sharing model.
+
+
+### Contract deployment on lisk
+https://sepolia-blockscout.lisk.com/tx/0x88ec298a3ed6c7145a5a2635967624e6e3f2125692f83ace299e83ff0c7d9838
+
+## Demo
+https://youtu.be/yHYwLoJvQtg
+
+## Pitch 
+https://www.canva.com/design/DAF7k_5jp5M/UvLLKZafrBb5na-NscXG5g/view?utm_content=DAF7k_5jp5M&utm_campaign=designshare&utm_medium=link&utm_source=recording_view 
