@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className='text-white'>
-        <div className='w-[90%] mx-auto py-10 px-2 flex justify-between items-center'>
+        <div className='w-[90%] mx-auto py-10 px-2 flex justify-between items-center '>
          <NavLink to="/"><img src={logo} alt="" className='w-[170px] h-auto' /></NavLink>
        {!isConnected && (<nav className='flex justify-between items-center'>
             <NavLink to="/" className="mr-10 hover:border-b hover:border-[#9C0F94] hover:text-[#9C0F94]">Home </NavLink>

@@ -12,6 +12,8 @@ import User from "./pages/Dashboard/User";
 import OnboardingData from "./pages/OnboardingData";
 import UserDetails from "./pages/UserDetails";
 import About from "./pages/About";
+import Message from "./pages/Dashboard/Message";
+import Setting from "./pages/Dashboard/Setting";
 
 configWeb3Modal();
 
@@ -25,6 +27,8 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/dashboard" element={<DashboardLayout />}>
     <Route index element={<User />} />  
     <Route path=":dashboardId" element={<UserDetails />} />
+    <Route path="message" element={<Message/>} />
+    <Route path="settings" element={<Setting/>} />
     </Route>
   </Route>
 ))
