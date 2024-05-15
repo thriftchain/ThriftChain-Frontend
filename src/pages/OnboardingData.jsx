@@ -94,7 +94,8 @@ const OnboardingData = () => {
                 <SuccessPage text="This email already exist!" /> // Replace with the actual successPage component
             ) : (
 
-                <main className="bg-[#070624] w-screen">
+                <div className="bg-[#070624] w-screen">
+                    <div className="container mx-auto px-8 sm:px-[80px] pb-[100px]"></div>
                     <h1 className="text-[30px] md:text-[34px] font-bold capitalize  text-white md:mx-96 md:mt-20 sm:mt-10 md:px-16 sm:mx-4">
                         Welcome to ThriftChain:{" "}
                     </h1>
@@ -129,7 +130,7 @@ const OnboardingData = () => {
 
 
                     <hr />
-                </main>
+                </div>
             )}
         </>
 

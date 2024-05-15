@@ -97,7 +97,7 @@ const CreateSingleThrift = () => {
   }
 
   return (
-    <div>
+    <div className="w-screen">
       <button
         onClick={handleOpen}
         className="style border py-2 px-8 my-4  hover:bg-[#9C0F94]"

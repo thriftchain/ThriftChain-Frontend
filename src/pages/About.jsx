@@ -24,7 +24,7 @@ const About = () => {
             />
         </div>
           </div>
-          <div className="flex flex-col lg:flex-row md:flex-row my-12 justify-between text-">
+          <div className="flex flex-col lg:flex-row md:flex-row my-12 justify-between sm:flex-row">
             <div className="w-[100%] lg:w-[32%] md:w-[32%] p-6 bg-[#060E37] rounded-lg">
               <p className=" text-white text-[15px] font-normal text-justify">
                 ThriftChain leverages blockchain technology for enhanced
