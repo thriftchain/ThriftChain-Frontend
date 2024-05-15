@@ -7,10 +7,10 @@ const MainLayout = () => {
   const { isConnected } = useWeb3ModalAccount();
 
   return isConnected ? <Navigate to={'/dashboard'} /> : (
-    <div>
-        <Header />
+    <div className='w-screen'>
+       <header> <Header /></header>
         <Outlet />
-        <Footer />
+       <footer><Footer /></footer>
     </div>
   )
 }

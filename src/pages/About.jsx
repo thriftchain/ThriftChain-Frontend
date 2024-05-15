@@ -2,7 +2,7 @@ import objects from "../assets/objects.svg";
 
 const About = () => {
   return (
-    <div className="bg-[#070624]">
+    <div className="bg-[#070624] w-screen">
       <div className="container mx-auto px-8 sm:px-[80px] pb-[100px]">
         <div className="flex md:flex-row lg:flex-row flex-col justify-between">
           <div className="content-card w-[100%] lg:w-[40%] md:w-[40%] mb-5 h-full p-1 self-center">
@@ -16,7 +16,7 @@ const About = () => {
               both individual and group financial planning.
             </p>
           </div>
-          <div className="content-card w-full lg:w-[55%] md:w-[50%] mb-5 h-full">
+          <div className="content-card w-full lg:w-[55%] md:w-[50%] mb-5 h-full mt-32">
             <img
               src={objects}
               alt="objects"

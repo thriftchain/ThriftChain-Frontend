@@ -6,7 +6,7 @@ const Header = () => {
   const {isConnected } = useWeb3ModalAccount();
 
   return (
-    <header className='text-white'>
+    <header className='text-white fixed top-0 right-0 left-0 bg-gradient z-50 border-y h-24'>
         <div className='w-[90%] mx-auto py-10 px-2 flex justify-between items-center '>
          <NavLink to="/"><img src={logo} alt="" className='w-[170px] h-auto' /></NavLink>
        {!isConnected && (<nav className='flex justify-between items-center'>

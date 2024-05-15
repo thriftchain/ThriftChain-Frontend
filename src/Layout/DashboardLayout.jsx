@@ -8,10 +8,12 @@ const DashboardLayout = () => {
 
   return !isConnected ? <Navigate to={'/'} /> : (
     <div>
+      
         <Header />
+        
         <div className="flex justify-between">
             <Sidebar />
-            <div className="px-6 w-[100%] lg:w-[72%] md:w-[72%] h-auto lg:h-[80vh] md:h-[80vh] overflow-y-scroll">
+            <div className="px-6 w-[100%] lg:w-[72%] md:w-[72%] h-auto lg:h-[80vh] md:h-[80vh] overflow-y-scroll mt-28">
             <Outlet />
             </div>
         </div>

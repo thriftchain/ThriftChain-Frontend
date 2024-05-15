@@ -14,7 +14,7 @@ const Sidebar = () =>  {
   };
 
   return (
-    <div className='bg-[#060E37] w-[25%] text-white p-8 py-12 h-[85vh]'>
+    <div className='bg-[#060E37] w-[25%] text-white p-8 py-12 h-[85vh] mt-28'>
       <NavLink to="/dashboard" className="text-[18px] flex items-center py-4 mb-4 px-4" style={({isActive}) => isActive ? activeStyle : null } end><CgHomeAlt className="mr-4" />Dashboard</NavLink>
       <NavLink to="message" className="text-[18px] flex items-center py-4 mb-4 px-6" style={({isActive}) => isActive ? activeStyle : null }><BiBox className="mr-4" /> Message</NavLink>
       <NavLink to="profile" className="text-[18px] flex items-center py-4 mb-4 px-6" style={({isActive}) => isActive ? activeStyle : null }><AiOutlineTeam className="mr-4" /> Profile</NavLink>
